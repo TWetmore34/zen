@@ -272,3 +272,19 @@ body {
     0% {top: 75%}
     100% {top: 21%}
 }
+
+/* Hover effects */
+#wrapper > .shape:nth-child(n):hover {
+    border: 1px solid rgb(10, 10, 10);
+}
+
+/* Route transitions */
+#wrapper[data-config="4"] > .shape[data-grow="1"] {
+    display: block;
+    width: 150vw;
+    height: 100vh;
+    top: -40%;
+    left: -75%;
+    border-radius: 0%;
+    z-index: 1;
+} 
