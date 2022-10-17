@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
 import { useNavigate } from "react-router-dom"
-const Block = ({idx, clickHandler}) => {
+const Block = ({idx, clickHandler, route}) => {
   const navigate = useNavigate();
-  const handleNavigation = useCallback(() => navigate("/test", {replace: true}), [navigate])
+  const handleNavigation = useCallback(() => navigate(`/${route}`, {replace: true}), [navigate])
 
   return (
     <div data-grow={0} data-value={idx} onClick={(e) => {

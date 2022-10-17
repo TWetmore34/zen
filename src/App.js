@@ -3,8 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import TestPage from './pages/TestPage'
 import Block from './components/Block'
 const App = () => {
-    const [animate, setAnimate] = useState(true)
     const [bgColor, setBgColor] = useState("black")
+    useEffect(() => {
+        let background = document.querySelector("body");
+        background.style.backgroundColor = bgColor;
+      },[bgColor])
+
     const random = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
@@ -17,31 +21,32 @@ const App = () => {
                 }
         }, 3000)
 
-    if(!animate) {
-        clearInterval(animation)
-    }
     
     
     const renderBoxes = () => {
+        let routes = ["test1", "test2", "test3", "test4", "test5", "test6", "test7"]
         let boxes = []
         for(let i = 0; i < 6; i++) {
-            boxes.push(<Block key={i} idx={i} clickHandler={clickHandler}/>)
+            boxes.push(
+            <Block key={i} route={routes[i]} idx={i} clickHandler={clickHandler}/>
+            )
         }
         return (boxes)
     }
 
     const clickHandler = async (e) => {
         e.preventDefault()
-        setAnimate(false)
+        clearInterval(animation)
         e.target.setAttribute("data-grow", 1)
         let color = window.getComputedStyle(e.target, null).getPropertyValue('background-color')
-        let top = window.getComputedStyle(e.target, null).getPropertyValue('top');
-        let left = window.getComputedStyle(e.target, null).getPropertyValue('left');
 
+        setBgColor(color)
+
+        // calls animation for routing
         let wrapper = document.getElementById("wrapper");
-        
         wrapper.setAttribute("data-config", 4)
 
+        // set body background color to match selected option
         setBgColor(color)
     }
   return ( 
@@ -53,8 +58,8 @@ const App = () => {
                 {renderBoxes()}
             </div>
             } />
-            <Route path="/test" element={
-                <TestPage color={bgColor} />
+            <Route path="/test6" element={
+                <TestPage route={"/test"} />
             } />
           </Routes>
         </BrowserRouter>
