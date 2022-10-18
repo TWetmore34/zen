@@ -1,0 +1,17 @@
+.img-container {
+    width: 80vw;
+    height: 60vh;
+    position: relative;
+    padding: 5%;
+    background-color: black;
+    display: block;
+    margin: 0 auto;
+}
+
+.img {
+    height: 80%;
+    position: absolute;
+    display: block;
+    left: 35%;
+}
+

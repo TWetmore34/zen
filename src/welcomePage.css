@@ -219,7 +219,7 @@ body {
     height: 31.5%;
     width: 3.5%;
     transform: rotate(90deg);
-    animation: rise4 1500ms infinite alternate-reverse ease-in-out;
+    animation: rise5 1500ms infinite alternate-reverse ease-in-out;
 } 
 
 #wrapper[data-config="3"] > .shape:nth-child(4) {
@@ -228,7 +228,7 @@ body {
     height: 35%;
     width: 3.5%;
     transform: rotate(90deg);
-    animation: rise3 1500ms infinite alternate-reverse ease-in-out;
+    animation: rise4 1500ms infinite alternate-reverse ease-in-out;
 
 } 
 
@@ -238,7 +238,7 @@ body {
     height: 40%;
     width: 5%;
     transform: rotate(90deg);
-    animation: rise2 1500ms infinite alternate-reverse ease-in-out;
+    animation: rise3 1500ms infinite alternate-reverse ease-in-out;
 } 
 
 #wrapper[data-config="3"] > .shape:nth-child(6) {
@@ -247,17 +247,18 @@ body {
     height: 50%;
     width: 10%;
     transform: rotate(90deg);
-    animation: rise1 1500ms infinite alternate-reverse ease-in-out;
+    animation: rise2 1500ms infinite alternate-reverse ease-in-out;
 } 
 
 /* this block isnt showing up in the animation!! */
 #wrapper[data-config="3"] > .shape:nth-child(7) {
-    left: 48%;
-    top: 35%;
-    height: 60%;
+    left: 50%;
+    top: 30%;
+    height: 55%;
     width: 10%;
     transform: rotate(90deg);
-    animation: rise5 1500ms infinite alternate-reverse ease-in-out;
+    animation: rise1 1500ms infinite alternate-reverse ease-in-out;
+
 } 
 
 @keyframes rise1 {
@@ -265,25 +266,29 @@ body {
     100% {top: 30%}
 }
 @keyframes rise2 {
-    0% {top: 60%}
+    0% {top: 53%}
     100% {top: 25%}
 }
 @keyframes rise3 {
-    0% {top: 68%}
-    100% {top: 23%}
+    0% {top: 66%}
+    100% {top: 22%}
 }
 @keyframes rise4 {
-    0% {top: 75%}
-    100% {top: 21%}
+    0% {top: 73%}
+    100% {top: 20%}
 }
 @keyframes rise5 {
-    0% {top: 80%}
+    0% {top: 78%}
     100% {top: 19%}
 }
 
 /* Hover effects */
 #wrapper > .shape:nth-child(n):hover {
     border: 1px solid rgb(10, 10, 10);
+}
+
+#wrapper[data-config="4"] > .shape:nth-child(n) {
+    display: none;
 }
 
 /* Route transitions */
