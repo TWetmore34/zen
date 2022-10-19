@@ -56,7 +56,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={
-            <div data-roundness={random(1,3)} data-config="3" id="wrapper">
+            <div data-roundness={1} data-config="3" id="wrapper">
                 {renderBoxes()}
             </div>
             } />

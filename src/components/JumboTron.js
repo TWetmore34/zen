@@ -1,19 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./JumboStyles.css"
 const JumboTron = () => {
-  const imgList = ["https://picsum.photos/200","https://picsum.photos/200","https://picsum.photos/200"]
-  let idx = 0;
-  const [selected, setSelected] = useState(imgList[0]) 
-  
-  setInterval(() => {
-    idx = idx < imgList.length ? idx +1 : 0
-    setSelected(imgList[idx])
-    console.log(idx)
-  },3000)
+    let [idx, setIdx] = useState(0)
+  const [selected, setSelected] = useState(["https://picsum.photos/200","https://picsum.photos/200","https://picsum.photos/200"]) 
 
   return (
-    <div className='img-container'>
-      <img className='img' src={selected}></img>
+    <div className='slideshow-container'>
+        <div className='fade'>
+            <div className='numbertext'>1 / 3</div>
+            <img src={selected[idx]} className="img" />
+            <div className='txt'>Text here</div>
+        </div>
+
+        <div className='next' onClick={() => {
+            setIdx(selected[idx + 1] ? idx+1 : 0)
+            }}>&#10094;</div>
+        <div className='prev' onClick={() => {
+            setIdx(selected[idx-1] ? idx-1 : selected.length - 1)
+            }}>&#10094;</div>
+
+        <div style={{textAlign: "center"}}>
+            <div className='dot' onClick={() => {
+            setIdx(0)
+            }}></div>
+
+            <div className='dot' onClick={() => {
+            setIdx(1)
+            }}></div>
+
+            <div className='dot' onClick={() => {
+            setIdx(2)
+            }}></div>`
+        </div>
     </div>
   )
 }

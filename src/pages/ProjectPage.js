@@ -8,6 +8,7 @@ const ProjectPage = () => {
       <JumboTron />
     </div>
   )
+
 }
 
 export default ProjectPage
