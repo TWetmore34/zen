@@ -5,9 +5,12 @@
 .img {
     display: block;
     margin: auto;
-    width: 80%;
+    width: 85%;
     height: 100%;
     margin: auto;
+    position: absolute;
+    left: 7.5%;
+    top: 0;
 }
 
 .slideshow-container {
