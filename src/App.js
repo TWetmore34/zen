@@ -14,6 +14,14 @@ const App = () => {
     const random = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
+    let idx = 0
+    let opacity = 0;
+    let txtAnimate = setInterval(() => {
+        const text= document.querySelectorAll("h1");
+        text[idx].setAttribute("data-opacity", opacity)
+        opacity = idx === text.length - 1 ? opacity + 1 : opacity
+        idx = idx < (text.length - 1) ? (idx + 1) : 0;
+    }, 85)
 
     let animation = setInterval(() => {
             const wrapper = document.getElementById("wrapper");
@@ -23,8 +31,15 @@ const App = () => {
                 }
         }, 3000)
 
-    
-    
+    const renderWelcome = () => {
+        let text = []
+        let testTxt = "Welcome to Zen"
+        for (let i = 0; i < testTxt.length; i++) {
+            text.push(<h1 key={i} data-opacity={0}>{testTxt[i]}</h1>)
+        }
+        return text;
+    }
+
     const renderBoxes = () => {
         let routes = ["test1", "test2", "test3", "test4", "test5", "test6", "test7"]
         let boxes = []
@@ -56,8 +71,11 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={
-            <div data-roundness={1} data-config="3" id="wrapper">
-                {renderBoxes()}
+                <div>
+                    {renderWelcome()}
+                    <div data-roundness={1} data-config="3" id="wrapper">
+                        {renderBoxes()}
+                    </div>
             </div>
             } />
             <Route path="/test1" element={

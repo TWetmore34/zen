@@ -8,6 +8,33 @@ body {
     place-items: center;
 }
 
+h1 {
+    color: white;
+    display: inline;
+    top: -100px;
+    margin: auto;
+    transition: opacity;
+    transition-duration: 1000;
+    transition-timing-function: ease-in-out;
+}
+
+h1[data-opacity="0"] {
+    opacity: 0;
+}
+
+h1[data-opacity="1"] {
+    opacity: 25%;
+}
+
+h1[data-opacity="2"] {
+    opacity: 50%;
+}
+
+h1[data-opacity="3"] {
+    opacity: 100%;
+}
+
+
 #wrapper {
     aspect-ratio: 1.618;
     width: 90vmin;

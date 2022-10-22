@@ -6,9 +6,9 @@ const JumboTron = () => {
 
   return (
     <div className='slideshow-container'>
-        <div className='fade'>
-            <div className='numbertext'>1 / 3</div>
             <img src={selected[idx]} className="img" />
+        <div className='fade'>
+            <div className='numbertext'>{idx + 1} / {selected.length}</div>
             <div className='txt'>Text here</div>
         </div>
 
@@ -30,7 +30,7 @@ const JumboTron = () => {
 
             <div className='dot' onClick={() => {
             setIdx(2)
-            }}></div>`
+            }}></div>
         </div>
     </div>
   )
