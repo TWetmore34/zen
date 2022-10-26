@@ -41,7 +41,13 @@ const App = () => {
     }
 
     const renderBoxes = () => {
-        let routes = ["test1", "test2", "test3", "test4", "test5", "test6", "test7"]
+        let routes = ["https://calm-lake-31825.herokuapp.com/", 
+        "https://twetmore34.github.io/portfolio-front-end/", 
+        "https://oz4tech.github.io/TSG-APP-Project-1/",
+        "https://github.com/charmingcharlii/Passivity",
+        "https://gentle-fortress-36739.herokuapp.com/", 
+        "https://github.com/TWetmore34/department-tracker", 
+        "https://twetmore34.github.io/regex-tutorial/"]
         let boxes = []
         for(let i = 0; i < 7; i++) {
             boxes.push(
@@ -67,42 +73,14 @@ const App = () => {
         setBgColor(color)
     }
   return ( 
+  <div>
     <div>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={
-                <div>
-                    {renderWelcome()}
-                    <div data-roundness={1} data-config="3" id="wrapper">
-                        {renderBoxes()}
-                    </div>
-            </div>
-            } />
-            <Route path="/test1" element={
-                <ProjectPage route={"/test1"} />
-            } />
-            <Route path="/test2" element={
-                <ProjectPage route={"/test2"} />
-            } />
-            <Route path="/test3" element={
-                <ProjectPage route={"/test3"} />
-            } />
-            <Route path="/test4" element={
-                <ProjectPage route={"/test4"} />
-            } />
-            <Route path="/test5" element={
-                <ProjectPage route={"/test5"} />
-            } />
-            <Route path="/test6" element={
-                <ProjectPage route={"/test6"} />
-            } />
-            <Route path="/test7" element={
-                <ProjectPage route={"/test7"} />
-            } />
-          </Routes>
-        </BrowserRouter>
+      {renderWelcome()}
+        <div data-roundness={1} data-config="3" id="wrapper">
+          {renderBoxes()}
+        </div>
     </div>
-  )
-}
+  </div>
+)}
 
 export default App
